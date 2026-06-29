@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Diagonal Brick Web</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app" aria-label="Diagonal Brick">
+    <section id="titleScreen" class="screen title-screen">
+      <div class="logo-card">
+        <p class="eyebrow">LEGO-STYLE PUZZLE</p>
+        <h1>Diagonal<br>Brick</h1>
+        <p class="subtitle">7×7の盤面にブロックを置いて、縦・横・斜めをそろえよう。</p>
+        <button id="startButton" class="primary-button">START</button>
+      </div>
+    </section>
+
+    <section id="gameScreen" class="screen game-screen hidden">
+      <header class="hud">
+        <button id="titleButton" class="ghost-button">TITLE</button>
+        <div class="score-box">
+          <span>SCORE</span>
+          <strong id="score">0</strong>
+        </div>
+      </header>
+
+      <div id="board" class="board" aria-label="7×7 board"></div>
+
+      <section class="hand-area" aria-label="blocks">
+        <div id="hand" class="hand"></div>
+      </section>
+    </section>
+
+    <section id="gameOverScreen" class="screen overlay hidden" aria-live="polite">
+      <div class="modal">
+        <p class="eyebrow">NO MORE MOVES</p>
+        <h2>Game Over</h2>
+        <p>Score <strong id="finalScore">0</strong></p>
+        <div class="modal-actions">
+          <button id="retryButton" class="primary-button">RETRY</button>
+          <button id="backTitleButton" class="ghost-button">TITLE</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="dragLayer" class="drag-layer" aria-hidden="true"></div>
+  <script src="./game.js"></script>
+</body>
+</html>
